@@ -5,14 +5,20 @@ branches:
 image: Visual Studio 2017
 configuration: Release
 clone_folder: c:\projects\openscap
+
+environment:
+  matrix:
+    - PYTHON_VERSION: 36
+
 install:
+- set PATH=C:\Python%PYTHON_VERSION%;%PYTHON%\Scripts;%PATH%
 - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
 cache: c:\tools\vcpkg\installed\
 before_build:
 - cmd: >-
     cd build
 
-    cmake -DENABLE_PYTHON3=FALSE -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+    cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
 build:
   project: c:\projects\openscap\build\openscap.sln
   verbosity: minimal

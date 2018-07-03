@@ -24,7 +24,7 @@ matrix:
       before_script:
         - cd build
       script:
-        - cmake -DENABLE_PYTHON3=false -DENABLE_PROBES=false -DENABLE_OSCAP_UTIL_DOCKER=false ../
+        - cmake -DENABLE_PROBES=false ../
         - make -j 4
 
 addons:
