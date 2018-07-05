@@ -31,7 +31,7 @@ matrix:
       before_script:
         - cd build
       script:
-        - cmake -DENABLE_PROBES=false ../
+        - cmake -DCMAKE_VERBOSE_MAKEFILE=ON ../
         - make -j 4
 
 addons:
