@@ -15,7 +15,9 @@ init:
 
 install:
 - choco install swig
+- choco install doxygen.install graphviz
 - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
+- set PATH=C:\Perl\bin;%PATH%
 
 cache: c:\tools\vcpkg\installed\
 
@@ -23,8 +25,8 @@ before_build:
 - cmd: >-
     cd build
 
-    cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+    cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
 
 build:
   project: c:\projects\openscap\build\openscap.sln
-  verbosity: minimal
+  verbosity: detailed
