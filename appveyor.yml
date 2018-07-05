@@ -17,7 +17,6 @@ install:
 - choco install swig
 - choco install doxygen.install graphviz
 - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
-- set PATH=C:\Perl\bin;%PATH%
 
 cache: c:\tools\vcpkg\installed\
 
@@ -29,4 +28,4 @@ before_build:
 
 build:
   project: c:\projects\openscap\build\openscap.sln
-  verbosity: detailed
+  verbosity: minimal
