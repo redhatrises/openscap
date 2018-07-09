@@ -73,6 +73,7 @@ find_package(GConf)
 find_package(Ldap)
 find_package(OpenDbx)
 find_package(PCRE REQUIRED)
+find_package(Perl)
 find_package(PerlLibs)
 find_package(Popt)
 
