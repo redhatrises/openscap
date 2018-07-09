@@ -11,6 +11,11 @@ if (${CMAKE_VERSION} VERSION_LESS "3.8.0")
 else()
 	swig_add_library(openscap_py LANGUAGE python SOURCES ../openscap.i)
 endif()
+
+if(WIN32)
+        list(APPEND CMAKE_SWIG_FLAGS -D_WIN32)
+endif()
+
 swig_link_libraries(openscap_py openscap ${PYTHON_LIBRARIES} ${LIBXML2_LIBRARIES} ${LIBXSLT_LIBRARIES} ${LIBXSLT_EXSLT_LIBRARIES} ${PCRE_LIBRARIES} ${CURL_LIBRARIES} ${BZIP2_LIBRARIES} ${RPM_LIBRARIES})
 
 add_custom_command(OUTPUT ${PYTHON_COMPILED_FILES}
