@@ -239,7 +239,7 @@
 
 
 %module openscap
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN32_WINNT)
 %ignore XML_ERROR;
 #endif
 %{
