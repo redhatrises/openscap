@@ -262,7 +262,9 @@
 %include "../../src/OVAL/public/oval_results.h"
 %include "../../src/OVAL/public/oval_schema_version.h"
 %include "../../src/OVAL/public/oval_session.h"
+#if not defined(_WIN32)
 %include "../../src/OVAL/public/oval_types.h"
+#endif
 %include "../../src/OVAL/public/oval_variables.h"
 #if defined(ENABLE_PROBES)
 %include "../../src/OVAL/public/oval_probe.h"
