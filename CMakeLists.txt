@@ -141,6 +141,7 @@ find_package(SWIG)
 find_package(LibXml2 REQUIRED)
 find_package(LibXslt REQUIRED)
 find_package(BZip2)
+find_package(pcre)
 
 # PThread
 if (WIN32)
