@@ -196,6 +196,7 @@ check_include_file(sys/mman.h HAVE_MMAN_H)
 check_include_file(sys/uio.h HAVE_UIO_H)
 check_include_file(sys/xattr.h HAVE_SYS_XATTR_H)
 check_include_file(attr/xattr.h HAVE_ATTR_XATTR_H)
+include_directories(/usr/local/include)
 
 # HAVE_ATOMIC_BUILTINS
 check_c_source_compiles("#include <stdint.h>\nint main() {uint16_t foovar=0; uint16_t old=1; uint16_t new=2;__sync_bool_compare_and_swap(&foovar,old,new); return __sync_fetch_and_add(&foovar, 1); __sync_fetch_and_add(&foovar, 1);}" HAVE_ATOMIC_BUILTINS)
