@@ -1,0 +1,21 @@
+name: Golie Build CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [macos-latest]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make
+        run: |
+            brew install doxygen opendbx popt swig libgcrypt pcre pkg-config cmake
+            cd build && cmake -DENABLE_PROBES_INDEPENDENT=ON -DENABLE_PROBES_UNIX=ON ../ && make -j4
