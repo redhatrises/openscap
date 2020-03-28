@@ -17,5 +17,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Make
         run: |
-            brew install doxygen opendbx popt swig libgcrypt pcre pkg-config watch glib cmake
+            brew install doxygen opendbx popt swig libgcrypt pcre pkg-config watch glib libc cmake
             cd build && cmake -DENABLE_PROBES_INDEPENDENT=ON -DENABLE_PROBES_UNIX=ON ../ && make -j4
