@@ -20,6 +20,5 @@ jobs:
             find / -name shadow.h
             find / -name passwd.h
             find / -name acl.h
-        run: |
             brew install doxygen opendbx popt swig libgcrypt pcre pkg-config watch glib cmake
             cd build && cmake -DENABLE_PROBES_INDEPENDENT=ON -DENABLE_PROBES_UNIX=ON ../ && make -j4
