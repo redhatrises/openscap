@@ -17,8 +17,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Make
         run: |
-            find / -name shadow.h
-            find / -name passwd.h
-            find / -name acl.h
             brew install doxygen opendbx popt swig libgcrypt pcre pkg-config watch glib cmake
             cd build && cmake -DENABLE_PROBES_INDEPENDENT=ON -DENABLE_PROBES_UNIX=ON ../ && make -j4
